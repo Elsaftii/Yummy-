@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Safty" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/Lib/all.min.css">
+    <link rel="stylesheet" href="css/Lib/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Yummy</title>
+</head>
+
+<body>
+    <div class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 justify-content-center align-items-center">
+        <i class="fa fa-spinner fa-spin fa-5x text-success"></i>
+    </div>
+    <section class="Sidebar min-vh-100 top-0 bottom-0 position-fixed d-flex">
+        <div class="Main-header min-vh-100 d-flex flex-column justify-content-between p-4">
+            <div class="Links">
+                <ul class="list-unstyled overflow-hidden">
+                    <li onclick="showSearchInputs()" class="py-3 position-relative cursor-pointer">Search</li>
+                    <li onclick="getCategories()" class="py-3 position-relative cursor-pointer">Categories</li>
+                    <li onclick="getArea()" class="py-3 position-relative cursor-pointer">Area</li>
+                    <li onclick="getIngredient()" class="py-3 position-relative cursor-pointer">Ingredient</li>
+                    <li onclick="showContactUs()" class="py-3 position-relative cursor-pointer">Contact Us</li>
+                </ul>
+            </div>
+            <div class="Sdiebar-footer">
+                <div class="fo-icon">
+                    <a href="https://www.facebook.com/profile.php?id=100010953011673" target='_blank' class='p-1 link-unstyled text-decoration-none text-white'>
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mahmoud-elsafty-26b811250" target='_blank' class='p-1 link-unstyled text-decoration-none text-white'>
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/safti" target='_blank' class='p-1 link-unstyled text-decoration-none text-white'>
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+                <div class="footer">
+                    <span>Copyright © 2024 Safty<br /> Reserved.</span>
+                </div>
+            </div>
+        </div>
+        <div class="Sidebar-Header d-flex flex-column justify-content-between bg-white text-black px-2 py-4 text-center">
+            <img onclick="firstReload()" src="logo/logo.png" class="logo cursor-pointer" alt="Logo">
+            <i class="fa-solid fa-x fa-xl open-close-icon"></i>
+            <div>
+                <i class="fa-solid fa-globe d-block"></i>
+                <i class="fa-solid fa-share-nodes"></i>
+            </div>
+        </div>
+    </section>
+    
+    <div class="min-vh-100 d-block position-relative" id="loadingContainer">
+        <div class="inner-loading-screen top-0 bottom-0 end-0 start-0 justify-content-center align-items-center">
+            <i class="fa fa-spinner fa-spin fa-5x text-success"></i>
+        </div>
+        <section class="Search">
+            <div class="container" id="SearchContainer">
+                
+            </div>
+    
+        </section>
+        
+        <section class="Home">
+            <div class="container">
+                <div class="row ms-2 py-5 ps-5 pe-2 g-4 d-flex" id="Meals">
+                   
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="Contact d-flex justify-content-center align-items-center vh-100 d-none" id="contact-us">
+        <div class="container w-50 text-center">
+            <h2>Contact Us</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input onkeyup="validation()" class="form-control  border-top-0 border-start-0 border-end-0  border-top-0 border-start-0 border-end-0" id="name" type="text" placeholder="Enter Your Name">
+                        <div class="alert mt-1 alert-danger d-none" id="namealert" role="alert">
+                            Special Characters and Numbers not allowed
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input onkeyup="validation()" class="form-control  border-top-0 border-start-0 border-end-0" id="email" placeholder="Enter Email">
+                        <div class="alert mt-1 alert-danger d-none" id="emailalert" role="alert">
+                        Enter valid email. *Ex: xxx@yyy.zzz
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input onkeyup="validation()" class="form-control  border-top-0 border-start-0 border-end-0" id="phone" placeholder="Enter phone">
+                        <div class="alert mt-1 alert-danger  d-none" id="phonealert" role="alert">
+                        Enter valid Phone Number
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input onkeyup="validation()" class="form-control  border-top-0 border-start-0 border-end-0" id="age" placeholder="Enter Age">
+                        <div class="alert mt-1 alert-danger  d-none" id="agealert" role="alert">
+                        Enter valid Age
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input onkeyup="validation()" class="form-control  border-top-0 border-start-0 border-end-0" type="password" id="password" placeholder="Enter Password">
+                        <div class="alert mt-1 alert-danger  d-none" id="passwordalert" role="alert">
+                        Enter valid password *Minimum eight characters, at least one letter and one number:*
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input onkeyup="validation()" class="form-control  border-top-0 border-start-0 border-end-0" type="password" id="rePassword" placeholder="Enter RePassword">
+                        <div class="alert mt-1 alert-danger  d-none" id="repasswordalert" role="alert">
+                        Enter valid Repassword
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-outline-danger mt-3 px-3">Submit</button>
+        </div>
+    </section> 
+
+
+    <script src="js/Lib/jquery-3.7.1.min.js"></script>
+    <script src="js/Lib/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+body{
+    background-color: #0D0D0D;
+    color: #f9f6f6;
+    overflow: hidden;
+}
+.Sidebar{
+    z-index: 99;
+}
+.Main-header{
+    background-color: #0D0D0D;
+}
+.logo{
+    width: 50px;
+}
+i{
+    cursor: pointer;
+}
+.meal-layer{
+    background-color: #f9f6f6ac;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    transition: 0.5s;
+}
+.meal:hover .meal-layer{
+    top:0px;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.loading-screen{
+    background-color: #0D0D0D;
+    z-index: 999;
+    display: flex;
+}
+.inner-loading-screen{
+    background-color: #0D0D0D;
+    position: absolute;
+    display: flex;
+    z-index: 9;
+}
